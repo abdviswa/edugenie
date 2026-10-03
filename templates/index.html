@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="EduGenie - Google Gemini powered learning assistant"
+  />
+  <title>EduGenie — AI Learning Assistant</title>
+
+  <!-- Static CSS -->
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+  <main class="app-shell">
+
+    <header class="hero">
+      <div>
+        <p class="eyebrow">AI-POWERED LEARNING</p>
+
+        <h1>
+          Edu<span>Genie</span>
+        </h1>
+
+        <p class="subtitle">
+          Your lightweight learning companion for questions,
+          explanations, quizzes, summaries and guided study paths.
+        </p>
+      </div>
+
+      <div class="status-pill" id="statusPill">
+        Checking AI…
+      </div>
+    </header>
+
+
+    <section class="workspace">
+
+      <!-- INPUT CARD -->
+      <div class="card input-card">
+
+        <label for="task">
+          Choose a learning task
+        </label>
+
+        <select id="task">
+          <option value="qa">
+            Ask a Question
+          </option>
+
+          <option value="explain">
+            Explain a Topic
+          </option>
+
+          <option value="quiz">
+            Generate Quiz
+          </option>
+
+          <option value="summarize">
+            Summarize Text
+          </option>
+
+          <option value="learn">
+            Recommend Learning Path
+          </option>
+        </select>
+
+
+        <label for="inputText" id="inputLabel">
+          Your question
+        </label>
+
+        <textarea
+          id="inputText"
+          placeholder="Example: Which is the largest ocean?"
+        ></textarea>
+
+
+        <div class="level-row" id="levelRow" hidden>
+
+          <label for="level">
+            Learning level
+          </label>
+
+          <select id="level">
+            <option value="beginner">
+              beginner
+            </option>
+
+            <option value="intermediate">
+              intermediate
+            </option>
+
+            <option value="advanced">
+              advanced
+            </option>
+          </select>
+
+        </div>
+
+
+        <button id="submitBtn">
+          Generate Answer
+        </button>
+
+        <p class="hint">
+          Your Gemini API key stays on the backend and is never placed
+          in this page.
+        </p>
+
+      </div>
+
+
+      <!-- RESULT CARD -->
+      <div class="card result-card">
+
+        <div class="result-head">
+
+          <div>
+            <p class="eyebrow">
+              RESULT
+            </p>
+
+            <h2 id="resultTitle">
+              Ready when you are
+            </h2>
+          </div>
+
+          <button
+            class="ghost"
+            id="copyBtn"
+            hidden
+          >
+            Copy
+          </button>
+
+        </div>
+
+
+        <div
+          id="result"
+          class="result-body empty"
+        >
+          Choose a task and submit your content.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      EduGenie · FastAPI + Google Gemini · Built for learning
+    </footer>
+
+  </main>
+
+
+  <!-- Static JavaScript -->
+  <script src="/static/app.js"></script>
+
+</body>
+</html>
